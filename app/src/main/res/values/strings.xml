@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">gyu-to-pu</string>
-    <string name="messagetext">…</string>
+    <string name="messagetext">＼ ﾌﾟｯ ／</string>
     <string name="buttontext">ｷﾞｭｯ!!</string>
+    <string name="cow">うし</string>
+    <string name="pig">ぶた</string>
+    <string name="hamburger">ハンバーガー</string>
+    <string name="sushi">すし</string>
 </resources>
