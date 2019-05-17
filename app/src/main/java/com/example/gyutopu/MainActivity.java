@@ -17,17 +17,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button btn = findViewById(R.id.messageButton);
-        final TextView mtv = findViewById(R.id.messageTextView);
-        btn.setOnTouchListener(new View.OnTouchListener(){
+        final TextView messageTextView = findViewById(R.id.messageTextView);
+        btn.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event){
-                if (event.getAction() == MotionEvent.ACTION_DOWN){
-                    mtv.setText("＼ ﾌﾟｯ ／");
-                } else if (event.getAction() == MotionEvent.ACTION_UP){
-                    mtv.setText("…");
-                }
+            public boolean onTouch(View v, MotionEvent event) {
+                String text = event.getAction() == MotionEvent.ACTION_DOWN ? "＼ ﾌﾟｯ ／" : "…";
+                messageTextView.setText(text);
                 return false;
             }
         });
+
     }
 }
