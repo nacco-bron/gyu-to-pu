@@ -33,12 +33,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private List<View> listGyuResults() {
+        int[] ids = new int[]{
+                R.id.messageTextView,
+                R.id.cowFaceImageView,
+                R.id.pigFaceImageView,
+                R.id.hamburgerImageView,
+                R.id.sushiImageView
+        };
         List<View> results = new ArrayList<>();
-        results.add(findViewById(R.id.messageTextView));
-        results.add(findViewById(R.id.cowFaceImageView));
-        results.add(findViewById(R.id.pigFaceImageView));
-        results.add(findViewById(R.id.hamburgerImageView));
-        results.add(findViewById(R.id.sushiImageView));
+        for (int id : ids) {
+            results.add(findViewById(id));
+        }
         return results;
     }
 }
