@@ -12,13 +12,15 @@ public class GyuResults {
         this.views = views;
     }
 
-    public void showRandom() {
-        View gyuResult = randomChoice();
-        showOf(gyuResult);
-    }
+//    public void showRandom() {
+//        View gyuResult = randomChoice();
+//        showOf(gyuResult);
+//    }
 
-    private View randomChoice() {
+    public View randomChoice() {
         int index = new Random().nextInt(views.size());
+        View gyuResult = views.get(index);
+        showOf(gyuResult);
         return views.get(index);
     }
 
@@ -26,6 +28,7 @@ public class GyuResults {
         for (View item : views) {
             int visible = item == gyuResult ? View.VISIBLE : View.INVISIBLE;
             item.setVisibility(visible);
+            item.setAlpha(0);
         }
     }
 }
