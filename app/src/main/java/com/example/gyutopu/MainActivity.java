@@ -9,7 +9,6 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,14 +20,13 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn = findViewById(R.id.messageButton);
 
-        final List<View> gyuResults = listGyuResults();
+        final GyuResults gyuResults = new GyuResults(listGyuResults());
 
         btn.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() != MotionEvent.ACTION_DOWN) return false;
-                View gyuResult = randomChoice(gyuResults);
-                showOf(gyuResult, gyuResults);
+                gyuResults.showRandom();
                 return false;
             }
         });
@@ -42,17 +40,5 @@ public class MainActivity extends AppCompatActivity {
         results.add(findViewById(R.id.hamburgerImageView));
         results.add(findViewById(R.id.sushiImageView));
         return results;
-    }
-
-    private View randomChoice(List<View> list) {
-        int index = new Random().nextInt(list.size());
-        return list.get(index);
-    }
-
-    private void showOf(View gyuResult, List<View> gyuResults) {
-        for (View item : gyuResults) {
-            int visible = item == gyuResult ? View.VISIBLE : View.INVISIBLE;
-            item.setVisibility(visible);
-        }
     }
 }
