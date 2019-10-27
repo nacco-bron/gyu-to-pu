@@ -2,4 +2,4 @@
 
 ｷﾞｭｯ!!っとするとﾌﾟｯっとなるやつ。
 
-![screenshot](gyu-to-pu.gif)
+<img src="gyu-to-pu.gif" width="300">
